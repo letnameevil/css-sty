@@ -1,0 +1,131 @@
+.container {
+}
+
+.top-menu {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 0.4rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.8rem;
+  font-size: 0.4rem;
+  font-weight: 700;
+  /* background-color: pink; */
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.signal {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  height: 0.4rem;
+}
+
+.signal div {
+  width: 0.08rem;
+  margin-right: 0.04rem;
+  background-color: black;
+  border-radius: 0.04rem;
+}
+
+.signal_1 {
+  height: 40%;
+}
+.signal_2 {
+  height: 45%;
+}
+
+.signal_3 {
+  height: 65%;
+}
+
+.signal_4 {
+  height: 85%;
+}
+
+.signal .signal_5 {
+  height: 100%;
+  background-color: gray;
+}
+
+.wifi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: .7rem;
+  height: .8rem;
+  /* background-color: red; */
+  overflow: hidden;
+  transform: translateY(15%);
+}
+
+.w {
+  border: .04rem solid #fff;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.w_1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wifi_3 {
+  width: .2rem;
+  height: .2rem;
+}
+
+.wifi_2 {
+  position:absolute;
+  width: .4rem;
+  height: .4rem;
+}
+
+.mask {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: .4rem solid #ececeb;
+  border-top:.4rem solid transparent;
+}
+
+.wifi_1 {
+  position: relative;
+  width: .6rem;
+  height: .6rem;
+}
+
+.battery {
+  display: flex;
+  align-items: center;
+  width: .85rem;
+  height: .7rem;
+}
+
+.outline {
+  flex: 9;
+  height: .3rem;
+  border: .06rem solid gray;
+  border-radius: .1rem;
+}
+
+.black {
+  background-color: black;
+  width: 30%;
+  height: 100%;
+  border-radius: .08rem;
+}
+
+.tou {
+  flex: 1;
+  background-color: gray;
+  height: .1rem;
+}
+
