@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 400px;
+        height: 400px;
+        margin: 100px auto;
+        border: 1px solid red;
+      }
+      .inner-box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: black 1px solid;
+        transform: translate(10px, 10px) rotate(45deg);
+        /* transform-origin配合旋转来使用  */
+        transform-origin: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner-box"></div>
+    </div>
+  </body>
+</html>
