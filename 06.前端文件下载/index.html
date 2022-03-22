@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>前端Blob对象</h1>
+    <a id="btn">下载</a>
+    <script>
+      var str = `
+      <div>
+      <h2>下载的文件</h2>
+    </div>
+      `
+      var blob = new Blob([str], {
+        type: 'text/html',
+      })
+      console.log(blob)
+
+      // blob.text().then((ret) => {
+      //   console.log(ret)
+      // })
+
+      btn.onclick = function () {
+        this.setAttribute('download', '123.html')
+          
+        // URL.createObjectURL 只能与blob 对象使用，得到的是一个url
+        console.log(URL.createObjectURL(blob))
+        this.href = URL.createObjectURL(blob)
+
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/index.css" />
+  </head>
+  <body>
+    <div class="box">
+      <button class="btn">点击弹出对话框</button>
+      <div class="sessionBox">
+        <div class="select-box">
+          <div class="select"></div>
+          <div class="content">
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let btn = document.querySelector('.btn'),
+        sessionBox = document.querySelector('.sessionBox'),
+        select = document.querySelector('.select')
+
+      btn.onclick = function () {
+        sessionBox.style.display = 'block'
+      }
+
+      let startY = (endY = 0)
+
+      let moveFn = function (e) {
+        endY = e.touches[0].pageY
+        let distance = endY - startY
+        if (distance > 350) {
+          return (sessionBox.style.display = 'none')
+        }
+        sessionBox.style.height = `${500 - distance}px`
+      }
+
+      select.addEventListener('touchstart', function (e) {
+        document.addEventListener('touchmove', moveFn)
+        startY = e.touches[0].pageY
+      })
+
+      select.addEventListener('touchend', function (e) {
+        sessionBox.style.height = '500px'
+        document.removeEventListener('touchmove', moveFn)
+      })
+    </script>
+  </body>
+</html>

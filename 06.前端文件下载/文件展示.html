@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="input" />
+
+    <script>
+      input.onchange = function (e) {
+        // 同步读取文件
+        // console.log(e.target.files[0])
+
+        // var file = e.target.files[0]
+
+        // var a = document.createElement('a')
+
+        // a.href = URL.createObjectURL(file)
+
+        // a.download = '测试文件'
+        // a.click()
+
+        // var img = new Image()
+
+        // img.src = URL.createObjectURL(file)
+
+        // document.body.appendChild(img)
+
+        //  异步读取文件
+
+        var file = e.target.files[0]
+        var a = document.createElement('a')
+        var fileRead = new FileReader()
+
+        fileRead.onload = function () {
+          console.log(fileRead.result)
+          var blob = new Blob([fileRead.result], {
+            type: 'application/x-zip-compressed',
+          })
+
+          a.href = URL.createObjectURL(blob)
+
+          a.download = '测试文件'
+
+          a.click()
+
+          console.log(fileRead)
+        }
+        fileRead.onprogress = function (e) {
+          console.log(e.loaded / e.total)
+          console.log(e.total)
+        }
+
+        // 这里是开始读取
+        // fileRead.readAsDataURL(file)
+
+        // 读取zip文件
+        fileRead.readAsArrayBuffer(file)
+      }
+    </script>
+  </body>
+</html>
